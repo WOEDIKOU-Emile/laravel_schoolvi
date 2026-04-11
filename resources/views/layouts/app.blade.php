@@ -23,7 +23,7 @@
 </head>
 <body>
 <nav class="navbar">
-    <a href="/" class="brand">DocManager</a>
+    <a href="/" class="brand">Schoolvi</a>
     <nav>
         @auth
             <span style="font-size:14px;color:#888">{{ auth()->user()->prenom }} {{ auth()->user()->nom }}</span>

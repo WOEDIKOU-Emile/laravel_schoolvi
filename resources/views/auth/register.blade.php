@@ -2,19 +2,105 @@
 
 @push('styles')
 <style>
-.auth-wrapper { display: flex; justify-content: center; align-items: center; min-height: calc(100vh - 60px); margin-top: -2rem; padding: 2rem 0; }
-.auth-card { background: #fff; border: 1px solid #e8e8e3; border-radius: 16px; padding: 2.5rem; width: 100%; max-width: 440px; }
-.auth-card h1 { font-size: 22px; font-weight: 600; color: #1a1a1a; margin-bottom: 6px; }
-.auth-card .subtitle { font-size: 14px; color: #888; margin-bottom: 2rem; }
-.field { margin-bottom: 1.2rem; }
-.field label { display: block; font-size: 12px; font-weight: 500; color: #666; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
-.field input { width: 100%; padding: 10px 12px; font-size: 14px; font-family: inherit; border: 1px solid #ddd; border-radius: 8px; background: #fafafa; color: #1a1a1a; transition: border-color 0.15s; }
-.field input:focus { outline: none; border-color: #4A6CF7; background: #fff; }
-.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.btn-submit { width: 100%; padding: 11px; background: #1a1a1a; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; transition: opacity 0.15s; }
-.btn-submit:hover { opacity: 0.85; }
-.auth-footer { margin-top: 1.5rem; text-align: center; font-size: 13px; color: #888; }
-.auth-footer a { color: #4A6CF7; text-decoration: none; font-weight: 500; }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: url("/images/image2.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.auth-wrapper{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding: 2rem 0;
+}
+.auth-card{
+    background-color: rgba(255,255,255,0.08);
+    padding: 30px;
+    width: min(560px, 100%);
+    border-radius: 20px;
+    border: 5px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(20px);
+}
+.auth-card h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+.auth-card .subtitle{
+    color: white;
+    font-weight:bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.field{
+    margin-bottom: 20px;
+    width: 100%;
+}
+.field label{
+    display: block;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.field input{
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+    outline: none;
+    color: white;
+    padding-right: 40px;
+    border: 5px solid rgba(255,255,255,0.2);
+    background-color: transparent;
+    font-size: 20px;
+}
+.field input::placeholder{
+    color: white;
+}
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.grid-2 .field{
+    width: auto;
+}
+.grid-2 .field input{
+    width: 100%;
+}
+.btn-submit{
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    outline: none;
+    border: 5px solid white;
+    font-size: 20px;
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+.btn-submit:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+.auth-footer{
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+}
+.auth-footer a{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
 </style>
 @endpush
 
@@ -22,7 +108,7 @@
 <div class="auth-wrapper">
     <div class="auth-card">
         <h1>Créer un compte</h1>
-        <p class="subtitle">Rejoignez DocManager et gérez vos tâches.</p>
+        <p class="subtitle">Rejoignez Schoolvi et explorez vos documents.</p>
 
         <form method="POST" action="/register">
             @csrf
