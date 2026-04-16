@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 
 // Auth
-Route::get('/',        fn() => redirect('/login'));
+Route::get('/',        [HomeController::class, 'index'])->name('home');
 Route::get('/login',   [AuthController::class, 'showLogin'])->name('login');
 Route::post('/login',  [AuthController::class, 'login']);
 Route::get('/register',[AuthController::class, 'showRegister']);
